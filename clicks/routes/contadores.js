@@ -57,13 +57,13 @@ router.delete('/:id', function(req, res, next) {
 router.put('/:id', function(req, res, next) {
   res.format({
     json: function () {
-      models.contadores.update(req.body, criteria(req)).then(contador => {
+      models.contadores.incrementar().then(contador => {
         res.json(contador);
       });
     },
     html: function () {
-      models.contadores.update(req.body, criteria(req)).then(contador => {
-        res.redirect('/api/v1/products');
+      models.contadores.incrementar().then(contador => {
+        res.redirect('/');
       });
     }
   });

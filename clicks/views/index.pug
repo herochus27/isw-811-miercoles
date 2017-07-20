@@ -40,7 +40,7 @@ block content
               .row
                 .col-md-6
                   if(contadores)
-                    form(action="/" method="POST")
+                    form(action="/"+1 + '?_method=PUT' method="POST")
                       input(name="valor" type="hidden" value="0")
                       button.btn.btn-primary.btn-block.btn-lg Click
                   else
