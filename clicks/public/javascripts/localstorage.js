@@ -1,4 +1,4 @@
-var number = parseInt(sessionStorage.getItem('number')) || 0;
+var number = parseInt(localStorage.getItem('number')) || 0;
 
 function count() {
 	document.getElementById('labelincrement').innerHTML = number += 1;
