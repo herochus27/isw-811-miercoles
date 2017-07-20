@@ -36,16 +36,18 @@ block content
             .panel-body
               .well.text-center
                 each contador in contadores
-                  label(name="contador") contador.valor
+                  label= contador.valor
               .row
                 .col-md-6
-                  if(contadores){
-                    
-                  }else{
+                  if(contadores)
                     form(action="/" method="POST")
                       input(name="valor" type="hidden" value="0")
                       button.btn.btn-primary.btn-block.btn-lg Click
-                  }
+                  else
+                    form(action="/" method="POST")
+                      input(name="valor" type="hidden" value="0")
+                      button.btn.btn-primary.btn-block.btn-lg Click
+                  
                 .col-md-6
                   button.btn.btn-default.btn-block.btn-lg Reset
         .col-md-3
