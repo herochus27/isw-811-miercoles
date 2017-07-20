@@ -50,6 +50,7 @@ block content
                 label#labelincrement 0
               .row
                 .col-md-6
-                  button(onclick="count()").btn.btn-primary.btn-block.btn-lg Click
+                  button.btn.btn-primary.btn-block.btn-lg(onclick="increment()") Click
                 .col-md-6
-                  button(onclick="removestorage()").btn.btn-default.btn-block.btn-lg Reset
+                  button.btn.btn-default.btn-block.btn-lg(onclick="reset()") Reset
+  script(src="/javascripts/localstorage.js")
