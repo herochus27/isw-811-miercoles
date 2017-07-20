@@ -12,6 +12,8 @@ function savestorage() {
 function removestorage() {
 
 	localStorage.removeItem('number');
+	number = 0;
+	document.getElementById('labelincrement').innerHTML  = 0;
 }
 
 document.getElementById('labelincrement').innerHTML  = localStorage.getItem('number') || 0;
