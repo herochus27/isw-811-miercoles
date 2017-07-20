@@ -69,5 +69,20 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
+router.put('/reset/:id', function(req, res, next) {
+  res.format({
+    json: function () {
+      models.contadores.update(req.body, criteria(req)).then(contador => {
+        res.json(contador);
+      });
+    },
+    html: function () {
+      models.contadores.update(req.body, criteria(req)).then(contador => {
+        res.redirect('/');
+      });
+    }
+  });
+});
+
 
 module.exports = router;
