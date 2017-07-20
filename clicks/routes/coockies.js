@@ -14,7 +14,8 @@ router.get('/', function(req, res, next) {
 	}
      var valor = (parseInt(req.cookies.TEST) +1);
 
-     res.cookie('TEST' , valor).send('Cookie is set');
+     res.cookie('TEST' , valor);
+     res.json({success:true});
  
 });
 
