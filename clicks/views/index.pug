@@ -11,12 +11,12 @@ block content
               strong Cookies
             .panel-body
               .well.text-center
-                label 0
+                label#valor 0
               .row
                 .col-md-6
-                  button.btn.btn-primary.btn-block.btn-lg Click
+                  button#click.btn.btn-primary.btn-block.btn-lg Click
                 .col-md-6
-                  button.btn.btn-default.btn-block.btn-lg Reset
+                  button#reset.btn.btn-default.btn-block.btn-lg Reset
         .col-md-3
           .panel.panel-default
             .panel-heading.text-center
@@ -47,9 +47,11 @@ block content
               strong Local Storage
             .panel-body
               .well.text-center
-                label 0
+                label#labelincrement 0
               .row
                 .col-md-6
-                  button.btn.btn-primary.btn-block.btn-lg Click
+                  button.btn.btn-primary.btn-block.btn-lg(onclick="increment()") Click
                 .col-md-6
-                  button.btn.btn-default.btn-block.btn-lg Reset
+                  button.btn.btn-default.btn-block.btn-lg(onclick="reset()") Reset
+  script(src="/javascripts/localstorage.js")
+ 
