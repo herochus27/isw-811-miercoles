@@ -23,12 +23,12 @@ block content
               strong Sessions
             .panel-body
               .well.text-center
-                label 0
+                label#lblCount 0
               .row
                 .col-md-6
-                  button.btn.btn-primary.btn-block.btn-lg Click
+                  button#clickSession.btn.btn-primary.btn-block.btn-lg(value='0') Click
                 .col-md-6
-                  button.btn.btn-default.btn-block.btn-lg Reset
+                  button#resetSession.btn.btn-default.btn-block.btn-lg Reset
         .col-md-3
           .panel.panel-default
             .panel-heading.text-center
@@ -44,7 +44,7 @@ block content
         .col-md-3
           .panel.panel-default
             .panel-heading.text-center
-              strong Local Storage
+              strong Local Stor age
             .panel-body
               .well.text-center
                 label#labelincrement 0
@@ -54,4 +54,5 @@ block content
                 .col-md-6
                   button.btn.btn-default.btn-block.btn-lg(onclick="reset()") Reset
   script(src="/javascripts/localstorage.js")
- 
+  script(src='/javascripts/session.js')
+  script(src='/javascripts/cookies.js')
