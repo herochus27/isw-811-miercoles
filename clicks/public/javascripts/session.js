@@ -33,7 +33,6 @@ $(document).ready(function(){
 
 function saveSession(){
   Session.getData().done(function(json){
-    console.log(json);
     $('#clickSession').val(json);
     $('#lblCount').text(json);
   });
