@@ -14,9 +14,15 @@ function get_cookie() {
 	})
 	.done(function() {
 		var cookie = document.cookie;
-		cookie = cookie.replace('TEST=', '');	
-		$('#valor').text('');
-		$('#valor').text(cookie);
+		var cookies = cookie.split(';');		
+		for (var i = 0; i < cookies.length; i++) {	
+			if (cookies[i].indexOf('TEST') > 0) {
+				cookie = cookies[i].replace('TEST=', '');	
+				$('#valor').text('');
+				$('#valor').text(cookie);
+				break;
+			};
+		};		
 	});	
 }
 
