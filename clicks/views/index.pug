@@ -41,7 +41,7 @@ block content
                 .col-md-6
                   if(contadores)
                     form(action="/"+1 + '?_method=PUT' method="POST")
-                      input(name="valor" type="hidden" value="0")
+                      input(name="valor" type="hidden" value=parseInt(contadores[0].valor)+1)
                       button.btn.btn-primary.btn-block.btn-lg Click
                   else
                     form(action="/" method="POST")
@@ -49,7 +49,7 @@ block content
                       button.btn.btn-primary.btn-block.btn-lg Click
                   
                 .col-md-6
-                  form(action="/reset/"+1 + '?_method=PUT' method="POST")
+                  form(action="/"+1 + '?_method=PUT' method="POST")
                       input(name="valor" type="hidden" value="0")
                       button.btn.btn-default.btn-block.btn-lg Reset
         .col-md-3
@@ -64,3 +64,5 @@ block content
                   button.btn.btn-primary.btn-block.btn-lg Click
                 .col-md-6
                   button.btn.btn-default.btn-block.btn-lg Reset
+
+

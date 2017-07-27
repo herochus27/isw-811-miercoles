@@ -39,50 +39,22 @@ router.post('/', function(req, res, next) {
   })
 });
 
-router.delete('/:id', function(req, res, next) {
-  res.format({
-    json: function() {
-      models.contadores.destroy(criteria(req)).then(() => {
-        res.json({status: 'ok'});
-      });
-    },
-    html: function () {
-      models.contadores.destroy(criteria(req)).then(() => {
-        res.redirect('/api/v1/products');
-      });
-    }
-  });
-});
 
 router.put('/:id', function(req, res, next) {
   res.format({
     json: function () {
-      models.contadores.incrementar().then(contador => {
+      models.contadores.update(req.body, criteria(req)).then(contador => {
         res.json(contador);
       });
     },
     html: function () {
-      models.contadores.incrementar().then(contador => {
+      models.contadores.update(req.body, criteria(req)).then(contador => {
         res.redirect('/');
       });
     }
   });
 });
 
-router.put('/reset/:id', function(req, res, next) {
-  res.format({
-    json: function () {
-      models.contadores.update(req.body, criteria(req)).then(contador => {
-        res.json(contador);
-      });
-    },
-    html: function () {
-      models.contadores.update(req.body, criteria(req)).then(contador => {
-        res.redirect('/');
-      });
-    }
-  });
-});
 
 
 module.exports = router;
