@@ -23,38 +23,20 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.post('/', function(req, res, next) {
-  var contador = models.contadores.create(req.body);
-  res.format({
-    json: function () {
-      contador.then(contador => {
-        res.json(contador);
-      });
-    },
-    html: function () {
-        contador.then(contador => {
-          res.redirect('/');
-      });
-    }
-  })
-});
-
-
 router.put('/:id', function(req, res, next) {
-  res.format({
-    json: function () {
-      models.contadores.update(req.body, criteria(req)).then(contador => {
-        res.json(contador);
-      });
-    },
-    html: function () {
-      models.contadores.update(req.body, criteria(req)).then(contador => {
-        res.redirect('/');
-      });
-    }
-  });
-});
 
+  if(req.body.valor){
+    models.contadores.update(req.body, criteria(req)).then(contador => {
+      res.redirect('/');
+    });
+  }else{
+    var nuevo={valor:1};
+    models.contadores.create(nuevo).then(contador => {
+      res.redirect('/');
+    });  
+  } 
+
+});
 
 
 module.exports = router;
