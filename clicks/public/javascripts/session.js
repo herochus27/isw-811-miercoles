@@ -28,7 +28,6 @@ $(document).ready(function(){
       saveSession();
     });
   });
-
     saveSession();
 });
 
@@ -39,4 +38,3 @@ function saveSession(){
     $('#lblCount').text(json);
   });
 }
-
