@@ -1,4 +1,4 @@
-
+load_cookie();
 $('#click').on('click',  function(event) {
   get_cookie();
 });
@@ -13,16 +13,7 @@ function get_cookie() {
 	type: 'GET'
 	})
 	.done(function() {
-		var cookie = document.cookie;
-		var cookies = cookie.split(';');		
-		for (var i = 0; i < cookies.length; i++) {	
-			if (cookies[i].indexOf('TEST') > 0) {
-				cookie = cookies[i].replace('TEST=', '');	
-				$('#valor').text('');
-				$('#valor').text(cookie);
-				break;
-			};
-		};		
+		load_cookie();	
 	});	
 }
 
@@ -30,6 +21,19 @@ function clear_cookie() {
 	document.cookie = 'TEST=0';
 	$('#valor').text('');
 	$('#valor').text(0);
+}
+
+function load_cookie (argument) {
+	var cookie = document.cookie;
+	var cookies = cookie.split(';');		
+	for (var i = 0; i < cookies.length; i++) {	
+		if (cookies[i].indexOf('TEST') > 0) {
+			cookie = cookies[i].replace('TEST=', '');	
+			$('#valor').text('');
+			$('#valor').text(cookie);
+			break;
+		};
+	};	
 }
 
 
